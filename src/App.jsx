@@ -29,7 +29,9 @@ const App = () => {
 
 				</div>
 
-				<Card />
+				<div className="card"><Card /></div>
+				
+
 				<div className="arrow">
 					<button>⭢</button>
 				</div>

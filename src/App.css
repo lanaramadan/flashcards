@@ -25,18 +25,22 @@
   width: 175px;
   line-height: 0.1;
   border-radius: 22px;
+  margin-bottom: 30px;
 }
 
 .characters {
   border: 5px solid #417d6c;
+  background-color: rgba(65, 125, 108, 0.2);
 }
 
 .planets {
   border: 5px solid #7492A5;
+  background-color: rgba(116, 146, 165, 0.2);
 }
 
 .quotes {
   border: 5px solid #900816;
+  background-color: rgba(144, 8, 22, 0.2);
 }
 
 button {
@@ -51,4 +55,17 @@ button {
   color:  #fff;
   cursor: pointer;
   margin-top: 30px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.card-inner {
+  padding: 50px;
 }
