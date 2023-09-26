@@ -1,10 +1,6 @@
 #root {
-  /* max-width: 1280px; */
   margin: auto;
-  padding: 2rem;
   text-align: center;
-  /* border: 3px solid green; */
-  /* background-color: #1c2020; */
 }
 
 .title {
@@ -14,6 +10,7 @@
 .header {
   line-height: .8;
 }
+
 .categories {
   display: flex;
   justify-content: center;
@@ -43,7 +40,7 @@
   background-color: rgba(144, 8, 22, 0.2);
 }
 
-button {
+.arrow button {
   border-radius: 8px;
   width: 100px;
   border: 1px solid transparent;
@@ -57,15 +54,31 @@ button {
   margin-top: 30px;
 }
 
+.arrow button:hover {
+  border-color: #7492A5;
+}
+
 .card {
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 700px;
-  height: 400px;
-  margin: 0 auto;
 }
 
-.card-inner {
+.content {
   padding: 50px;
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.content:active {
+  cursor: pointer;
+  transform: scale(1);
 }

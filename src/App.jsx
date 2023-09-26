@@ -31,10 +31,6 @@ const App = () => {
 
 				<div className="card"><Card /></div>
 				
-
-				{/* <div className="arrow">
-					<button>⭢</button>
-				</div> */}
 			</div>
 
 		</div>

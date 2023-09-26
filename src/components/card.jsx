@@ -19,6 +19,7 @@ const Card = (props) => {
         return questions[Math.floor(Math.random() * questions.length)];
     };
 
+    const [currentSide, setCurrentSide] = useState("question");
     const [raw_type, raw_question, raw_answer] = getQuestion();
     const [type, setType] = useState(raw_type);
     const [question, setQuestion] = useState(raw_question);
@@ -29,19 +30,16 @@ const Card = (props) => {
         setType(raw_type);
         setQuestion(raw_question);
         setAnswer(raw_answer);
+        setCurrentSide("question")
     };
+
+    const switchSide = () => {setCurrentSide(currentSide === "question" ? "answer" : "question")};
+
     
     return (
         <div className="card-mechanism">
-            <div className={`card-inner ${type}`}>
-                <div className="question">
-                    <h2>{question}</h2>
-                </div>
-                    
-                <div className="answer">
-                    <h2>{answer}</h2>
-                </div>
-
+            <div className={`content ${type}`} onClick={switchSide}>
+                <h2>{currentSide === "question" ? question : answer}</h2>
             </div>
 
             <div className="arrow">
