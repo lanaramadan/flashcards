@@ -1,6 +1,54 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  margin: auto;
   padding: 2rem;
   text-align: center;
+  /* border: 3px solid green; */
+  /* background-color: #1c2020; */
+}
+
+.title {
+  line-height: 0.1;
+}
+
+.header {
+  line-height: .8;
+}
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.category {
+  padding: 10px;
+  width: 175px;
+  line-height: 0.1;
+  border-radius: 22px;
+}
+
+.characters {
+  border: 5px solid #417d6c;
+}
+
+.planets {
+  border: 5px solid #7492A5;
+}
+
+.quotes {
+  border: 5px solid #900816;
+}
+
+button {
+  border-radius: 8px;
+  width: 100px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #212C3F;
+  color:  #fff;
+  cursor: pointer;
+  margin-top: 30px;
 }
