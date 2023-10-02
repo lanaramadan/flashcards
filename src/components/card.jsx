@@ -1,22 +1,13 @@
 import React from "react";
 import { useState } from 'react';
+import questionsJson from "./questions.json"
 
 const Card = (props) => {
-    const questions = [
-        ["characters", "Who is the famous Wookiee co-pilot of the Millennium Falcon?", "Chewbacca"],
-        ["characters", "What character is a protocol droid fluent in over six million forms of communication?", "C-3PO"],
-        ["characters", "Who is the Sith Lord who was once a Jedi Knight named Anakin Skywalker?", "Darth Vader"],
-        ["characters", "Who is the Jedi Master who trained Anakin Skywalker?", "Obi-Wan Kenobi"],
-        ["characters", "Who was the Jedi Master that discovered the secret to eternal life through the Force?", "Qui-Gon Jinn"],
-        ["planets", "What desert planet is the home of Anakin Skywalker and Luke Skywalker?", "Tatooine"],
-        ["planets", "What is the name of Princess Leia's home planet, which was destroyed by the Death Star?", "Alderaan"],
-        ["planets", "What lush, green planet is the home planet of Padmé Amidala?", "Naboo"],
-        ["quotes", 'Who said, "I have brought peace, freedom, justice, and security to my new empire"?', "Anakin Skywaker / Darth Vader"],
-        ["quotes", 'Finish this iconic line from Princess Leia: "Aren\'t you a little short for a..."', '"...Stormtrooper?"']
-    ];
-
     const getQuestion = () => {
-        return questions[Math.floor(Math.random() * questions.length)];
+        // return questions[Math.floor(Math.random() * questions.length)];
+        let randomQuestionInfo = questionsJson.questions[Math.floor(Math.random() * questionsJson.questions.length)];
+        return [randomQuestionInfo.type, randomQuestionInfo.question, randomQuestionInfo.answer]
+
     };
 
     const [currentSide, setCurrentSide] = useState("question");
