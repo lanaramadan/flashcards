@@ -22,7 +22,6 @@
   width: 175px;
   line-height: 0.1;
   border-radius: 22px;
-  margin-bottom: 30px;
 }
 
 .characters {
@@ -40,9 +39,78 @@
   background-color: rgba(144, 8, 22, 0.2);
 }
 
+.streaks {
+  display: flex;
+  /*align-content: center;*/
+  /*align-items: center;*/
+  justify-content:center;
+  gap: 10px;
+}
+
+.streak {
+  background-color: rgba(116, 146, 165, 0.2);
+  font-size: 15px;
+  padding: 15px;
+}
+
+.card-mechanism {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-guess {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.textbox {
+  width: 500px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  font-size: 20px;
+  outline: none;
+}
+
+.textbox::placeholder {
+  color: #7492A5;
+}
+
+.button {
+  line-height: 15px;
+  background-color: #212C3F;
+  font-size: 15px;
+  padding: 15px;
+  outline: none;
+  border: none;
+  color: white;
+  text-align: center;
+}
+
+.none {
+  border: 1px solid #7492A5;
+  background-color: rgba(116, 146, 165, 0.2);
+}
+
+.incorrect {
+  border: 1px solid #900816;
+  background-color: rgba(144, 8, 22, 0.2);
+}
+
+.correct {
+  border: 1px solid #417d6c;
+  background-color: rgba(65, 125, 108, 0.2);
+}
+
 .arrow button {
+  margin: 0px 10px;
   border-radius: 8px;
   width: 100px;
+  height: 40px;
+  line-height: 20px;
   border: 1px solid transparent;
   padding: 0.3em 1em;
   font-size: 1.5em;
@@ -51,7 +119,6 @@
   background-color: #212C3F;
   color:  #fff;
   cursor: pointer;
-  margin-top: 30px;
 }
 
 .arrow button:hover {
