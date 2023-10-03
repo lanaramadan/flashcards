@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import questionsJson from "./questions.json"
 
-const Card = (props) => {
+const Card = () => {
     // constants to keep track of the dictionary
     const [questionDictionary, setQuestionDictionary] = useState(questionsJson.questions);
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -17,16 +17,38 @@ const Card = (props) => {
     // constant to keep track of whether the guess was correct - alternates between "none" and "correct" and "incorrect"
     const [currentGuessType, setCurrentGuessType] = useState("none");
 
-    const getQuestion = () => {
-        // if the index is too high, reset to 0
-        if (questionIndex >= Object.keys(questionDictionary).length) {
-            setQuestionIndex(0);
-            return ["n/a", "No question available", "No answer available"];
+    // constants to keep track of the current question
+    const [type, setType] = useState('planets');
+    const [question, setQuestion] = useState('Click the arrow to begin!');
+    const [answer, setAnswer] = useState('Click the arrow to begin!');
+    const [guess, setGuess] = useState("");
 
+    // switches the current side when card is clicked
+    const switchSide = () => {setCurrentSide(currentSide === "question" ? "answer" : "question")};
+
+    // updates guess with what's in the text box
+    const handleGuess = (e) => {setGuess(e.target.value)};
+    const checkGuess = (answer) => {
+        // checks whther the entered guess is correct
+        if (guess.toLowerCase() === answer.toLowerCase()) {
+            setCurrentGuessType("correct")
+            setStreak(streak + 1)
         }
+        else {
+            setCurrentGuessType("incorrect")
+            if (streak > longestStreak) {
+                setLongestStreak(streak)
+            }
+            setStreak(0)
+        }
+    };
 
-        // returning the next item from the dictionary
-        let randomQuestionInfo = questionDictionary[questionIndex];
+    const subCount = () => setQuestionIndex(questionIndex - 1);
+    const addCount = () => setQuestionIndex(questionIndex + 1);
+
+    const getQuestion = (currentIndex) => {
+        // returns question info based on the current index
+        let randomQuestionInfo = questionDictionary[Math.abs(currentIndex % Object.keys(questionDictionary).length)];
         return [randomQuestionInfo.type, randomQuestionInfo.question, randomQuestionInfo.answer]
     };
 
@@ -42,18 +64,14 @@ const Card = (props) => {
         // updating the dictionary and resetting the index
         setQuestionDictionary(newQuestionDictionary)
         setQuestionIndex(0)
-        newQuestion()
+        updateQuestion()
 
         return newQuestionDictionary
     }
 
-    const previousQuestion = () => {
-
-    };
-
-    const newQuestion = () => {
+    const updateQuestion = () => {
         // updating the constants that track the current question
-        const [raw_type, raw_question, raw_answer] = getQuestion();
+        const [raw_type, raw_question, raw_answer] = getQuestion(questionIndex);
         setType(raw_type);
         setQuestion(raw_question);
         setAnswer(raw_answer);
@@ -62,34 +80,8 @@ const Card = (props) => {
         setCurrentSide("question")
         setCurrentGuessType("none")
         setGuess('')
-        setQuestionIndex(questionIndex + 1)
     };
 
-    // constants to keep track of the current question
-    const [raw_type, raw_question, raw_answer] = getQuestion();
-    const [type, setType] = useState(raw_type);
-    const [question, setQuestion] = useState(raw_question);
-    const [answer, setAnswer] = useState(raw_answer);
-    const [guess, setGuess] = useState("");
-
-    // switches the current side when card is clicked
-    const switchSide = () => {setCurrentSide(currentSide === "question" ? "answer" : "question")};
-
-    // updates guess with what's in the textbox
-    const handleGuess = (e) => {setGuess(e.target.value)};
-    const checkGuess = (answer) => {
-        if (guess.toLowerCase() === answer.toLowerCase()) {
-            setCurrentGuessType("correct")
-            setStreak(streak + 1)
-        }
-        else {
-            setCurrentGuessType("incorrect")
-            if (streak > longestStreak) {
-                setLongestStreak(streak)
-            }
-            setStreak(0)
-        }
-    };
 
     return (
         <div>
@@ -121,8 +113,18 @@ const Card = (props) => {
                 </div>
 
                 <div className="arrow">
-                    <button onClick={previousQuestion}>←</button>
-                    <button onClick={newQuestion}>→</button>
+                    <button onClick={() => {
+                        subCount();
+                        updateQuestion();
+                    }}>←</button>
+
+                    <button onClick={() => {
+                        addCount();
+                        updateQuestion();
+                    }}>→</button>
+
+
+                    {/*<button onClick={nextQuestion}>→</button>*/}
                     <button onClick={shuffleQuestions}>🔀</button>
                 </div>
             </div>

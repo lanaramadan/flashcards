@@ -1,64 +1,64 @@
 {
-    "questions": [
-      {
-        "type": "characters",
-        "question": "Who is the famous Wookiee co-pilot of the Millennium Falcon?",
-        "answer": "Chewbacca"
-      },
+  "questions": [
+    {
+      "type": "characters",
+      "question": "Who is the famous Wookiee co-pilot of the Millennium Falcon?",
+      "answer": "Chewbacca"
+    },
 
-      {
-        "type": "characters",
-        "question": "What character is a protocol droid fluent in over six million forms of communication?",
-        "answer": "C-3PO"
-      },
+    {
+      "type": "characters",
+      "question": "What character is a protocol droid fluent in over six million forms of communication?",
+      "answer": "C-3PO"
+    },
 
-      {
-        "type": "characters",
-        "question": "Who is the Sith Lord who was once a Jedi Knight named Anakin Skywalker?",
-        "answer": "Darth Vader"
-      },
+    {
+      "type": "characters",
+      "question": "Who is the Sith Lord who was once a Jedi Knight named Anakin Skywalker?",
+      "answer": "Darth Vader"
+    },
 
-      {
-        "type": "characters",
-        "question": "Who is the Jedi Master who trained Anakin Skywalker?",
-        "answer": "Obi-Wan Kenobi"
-      },
+    {
+      "type": "characters",
+      "question": "Who is the Jedi Master who trained Anakin Skywalker?",
+      "answer": "Obi-Wan Kenobi"
+    },
 
-      {
-        "type": "characters",
-        "question": "Who was the Jedi Master that discovered the secret to eternal life through the Force?",
-        "answer": "Qui-Gon Jinn"
-      },
+    {
+      "type": "characters",
+      "question": "Who was the Jedi Master that discovered the secret to eternal life through the Force?",
+      "answer": "Qui-Gon Jinn"
+    },
 
-      {
-        "type": "planets",
-        "question": "What desert planet is the home of Anakin Skywalker and Luke Skywalker?",
-        "answer": "Tatooine"
-      },
+    {
+      "type": "planets",
+      "question": "What desert planet is the home of Anakin Skywalker and Luke Skywalker?",
+      "answer": "Tatooine"
+    },
 
-      {
-        "type": "planets",
-        "question": "What is the name of Princess Leia's home planet, which was destroyed by the Death Star?",
-        "answer": "Alderaan"
-      },
+    {
+      "type": "planets",
+      "question": "What is the name of Princess Leia's home planet, which was destroyed by the Death Star?",
+      "answer": "Alderaan"
+    },
 
-      {
-        "type": "planets",
-        "question": "What lush, green planet is the home planet of Padmé Amidala?",
-        "answer": "Naboo"
-      },
+    {
+      "type": "planets",
+      "question": "What lush, green planet is the home planet of Padmé Amidala?",
+      "answer": "Naboo"
+    },
 
-      {
-        "type": "quotes",
-        "question": "Finish this iconic line from Princess Leia: \"Aren't you a little short for a...\"",
-        "answer": "\"...Stormtrooper?\""
-      },
+    {
+      "type": "quotes",
+      "question": "Finish this iconic line from Princess Leia: \"Aren't you a little short for a...\"",
+      "answer": "\"...Stormtrooper?\""
+    },
 
-      {
-        "type": "quotes",
-        "question": "Who said, \"I have brought peace, freedom, justice, and security to my new empire\"?",
-        "answer": "Anakin Skywalker"
-      }
+    {
+      "type": "quotes",
+      "question": "Who said, \"I have brought peace, freedom, justice, and security to my new empire\"?",
+      "answer": "Anakin Skywalker"
+    }
 
-    ]
-  }
+  ]
+}
